@@ -27,3 +27,14 @@ console.log(mixed)
 // objects 
 
 let userOne : object // This explicitly defines an object
+
+
+
+//Dynamic types (This should be avoided)
+let age: any = 5;
+age = true;
+console.log(age);
+age = 'hello';
+console.log(age);
+age = { name: 'Philip' };
+console.log(age);
