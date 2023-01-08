@@ -73,3 +73,11 @@ const greetUser = (uid: StringOrNum, item:string) => {
 }
 
 greetUser(1, "ww")
+
+// function signature
+
+let greet: (a: string, b: string) => void;
+
+greet = (name: string, greeting: string) => {
+  console.log(`${name} says ${greeting}`);
+}
