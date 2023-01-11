@@ -1,51 +1,26 @@
-"use strict";
-console.log("Welcome");
-const user = "Philip";
-alert("Philip");
-//explicit types allows me to define types for a variable or any data structure beforehand.
-let admin;
-admin = false;
-console.log(admin);
-//for arrays
-let cars = [];
-// cars.push(23) - error
-cars.push("Audi");
-console.log(cars);
-// union types
-let mixed = [];
-mixed.push("Greet", 43, true);
-console.log(mixed);
-// objects
-let userOne; // This explicitly defines an object
-//Dynamic types (This should be avoided)
-let age = 5;
-age = true;
-console.log(age);
-age = "hello";
-console.log(age);
-age = { name: "Philip" };
-console.log(age);
-console.log("Added better workflow for my typescript file ");
-//functions
-// let greet: Function = () => {
-//   console.log('hello, world');
-// }
-// greet = 'hello';
-// greet = () => {
-//   console.log('hello, again');
-// }
-const add = (a, b, c = /*?*/ 10) => {
-    console.log(a + b);
-    console.log(c);
-};
-add(5, 10, "web");
-const minus = (a, b) => {
-    //although ts is well aware the function is returning a number
-    return a + b;
-};
-let result = minus(10, 7);
-console.log(result);
-const greetUser = (uid, item) => {
-    console.log(`${uid} and ${item}`);
-};
-greetUser(1, "ww");
+import { Invoice } from './classes/Invoice.js';
+const invOne = new Invoice("mario", "work on the mario website", 250);
+const invTwo = new Invoice("luigi", "work on the luigi website", 300);
+let invoices = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+invoices.forEach((inv) => {
+    console.log(inv.client, /*inv.details,*/ inv.amount, inv.format());
+});
+const anchor = document.querySelector("a");
+if (anchor) {
+    console.log(anchor.href);
+}
+console.log(anchor.href);
+//const form = document.querySelector('form')!;
+const form = document.querySelector(".new-item-form");
+console.log(form.children);
+// inputs
+const type = document.querySelector("#type");
+const tofrom = document.querySelector("#tofrom");
+const details = document.querySelector("#details");
+const amount = document.querySelector("#amount");
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
+});
