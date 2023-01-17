@@ -55,3 +55,17 @@ form.addEventListener("submit", (e: Event) => {
 
   console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
 });
+
+// TUPLES
+let arr = ['fred', 18, true];
+arr[0] = false;
+arr[1] = 'zina';
+arr = [50, false, 'yoshi'];
+
+let tup: [string, number, boolean] = ['prince', 25, true];
+// tup[0] = false;
+tup[0] = 'philip';
+
+let student: [string, number];
+// student = [23564, 'beauty'];
+student = ['beauty', 23564];
